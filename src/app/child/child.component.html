@@ -1,0 +1,7 @@
+<p>
+  child works!
+</p>
+<router-outlet></router-outlet>
+<a href="#" [routerLink]="['/child/child1']">child11111</a>
+<a href="#" [routerLink]="['/child/child2']">child222222</a>
+<app-child1 [getName]='name' (b)="fu($event)"></app-child1>

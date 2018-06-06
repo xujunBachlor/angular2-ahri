@@ -1,0 +1,27 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+.what{
+  width: 200px;
+  line-height: 32px;
+  color: red;
+  background-color: pink;
+}
+.activeLink{
+  color: red;
+}
+.imgDiv{
+  width: 200px;
+  height: 200px;
+  background: url(../assets/img/QQ图片20180512232847.gif) no-repeat center;
+}
+.ahri{
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  background-color: chartreuse;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px 6px pink;
+}
