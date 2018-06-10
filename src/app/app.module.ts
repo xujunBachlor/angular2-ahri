@@ -1,3 +1,4 @@
+import { KurumiServiceService } from './kurumi-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,6 +11,8 @@ import { DemoComponent } from './demo/demo.component';
 import { RouterConfigModule } from './router/router.module';
 import { Child1Component } from './child1/child1.component';
 import { Child2Component } from './child2/child2.component';
+import { HttpsService } from './https.service';
+import { HttpModule } from '@angular/http';//系统服务，提供了ajax服务
 
 @NgModule({ //装饰器类，描述模块属性的元数据的对象
   declarations: [ 
@@ -25,9 +28,10 @@ import { Child2Component } from './child2/child2.component';
   imports: [  //加载其他模块的组件
     BrowserModule, //浏览器访问时必须加载的模块，
     FormsModule, //表单模块
-    RouterConfigModule
+    RouterConfigModule,
+    HttpModule
   ],
-  providers: [],  //服务的提供者
+  providers: [KurumiServiceService,HttpsService],  //服务的提供者
   bootstrap: [AppComponent] //指定应用的主视图，只有根模块才有
 })
 export class AppModule { }

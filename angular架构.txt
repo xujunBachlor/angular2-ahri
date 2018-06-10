@@ -1,0 +1,24 @@
+angular架构
+	1、模块 --组件和一系列代码关联起来的单元
+	2、组件 --基本上一个组件就是一个独立的页面单元
+	3、模板、指令和数据绑定 
+	4、服务与依赖注入
+	5.路由
+ng g component kurumi -it   //生成组件时用内联模版代替模版文件
+ng g class className  		//创建一个类文件
+--模版表达式[property]="expression" //属性绑定
+--模版语句(event)="statement"		//时间绑定 	
+CSS类绑定（切换单一类名）	[class]='true | false' --启用|不启用所有类
+			[class.special]='true | false'  --启用|不启用special类
+样式绑定（切换单一样式） [style.color]="true?'red' : 'yellow'" --字体颜色为red或yellow
+						[style.font-size.em]="true?14 : 16" --字体大小为14或16，带单位
+模版引用变量（#var） 可以用ref-代替# 即 ref-var		下面可以写作ref-phone
+			<input #phone placeholder="phone number"> 		//phone指代整个input元素，可以再在整个模版中调用phone
+			<button (click)="callPhone(phone.value)">Call</button>		//此处phone.value就是指的phone代表的input的值
+安全导航操作符（?.）
+			The null hero's name is {{nullHero?.name}}  //碰到第一个空值时跳出，显示为空，不会出错
+非空断言操作符（!）
+			<div *ngIf="hero">The hero's name is {{hero!.name}}</div>//使用了非空断言操作符，只有在打开了严格空值检测时才有用，会跳过检测，其余时候可加可不加
+类型转换函数$any(expression)用于把表达式转换成any类型
+			The hero's marker is {{$any(hero).marker}}
+			Undeclared members is {{$any(this).member}} //结合this访问组件中未声明的属性，意义不明

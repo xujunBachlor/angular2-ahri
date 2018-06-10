@@ -1,3 +1,4 @@
+import { KurumiServiceService } from './../kurumi-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
+//初始化服务的对象，服务是一个单例对象，整个项目只会提供一个服务对象
 
-  constructor() { }
+  constructor(private kurumi: KurumiServiceService) { 
+    kurumi.ahriSay();
+  }
 
   name: String;
   age: number;
